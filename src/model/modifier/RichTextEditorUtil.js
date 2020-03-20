@@ -354,6 +354,23 @@ const RichTextEditorUtil = {
       'change-inline-style'
     );
   },
+  
+  removeInlineStyle: function(
+    editorState: EditorState,
+    inlineStyle: string,
+  ): EditorState {
+    const selection = editorState.getSelection();
+    const currentStyle = editorState.getCurrentInlineStyle();
+
+    const content = editorState.getCurrentContent();
+    const newContent DraftModifier.removeInlineStyle(
+      content,
+      selection,
+      inlineStyle,
+    );
+
+    return EditorState.push(editorState, newContent, 'change-inline-style');
+  },
 
   toggleLink: function(
     editorState: EditorState,
