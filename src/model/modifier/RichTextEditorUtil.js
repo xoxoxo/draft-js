@@ -354,7 +354,7 @@ const RichTextEditorUtil = {
       'change-inline-style'
     );
   },
-  
+
   removeInlineStyle: function(
     editorState: EditorState,
     inlineStyle: string,
@@ -363,7 +363,7 @@ const RichTextEditorUtil = {
     const currentStyle = editorState.getCurrentInlineStyle();
 
     const content = editorState.getCurrentContent();
-    const newContent DraftModifier.removeInlineStyle(
+    const newContent = DraftModifier.removeInlineStyle(
       content,
       selection,
       inlineStyle,
